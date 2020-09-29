@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue Mastery</title>
+    <!-- Import Styles -->
+    <link rel="stylesheet" href="public/build/tailwind.css">
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <product-display :premium="premium" @add-to-cart="updateCart"></product-display>
+      <button v-on:click="update_button" class="bg-gray-600 rounded pt-1 pb-1 px-1 py-1">Update</button>
+      <ul>
+        <li v-for="post in posts">{{ post }}</li>
+      </ul>
+      <button v-on:click="post_name" class="bg-gray-600 rounded pt-1 pb-1 px-1 py-1">post  </button>
+    </div>
+
+    <script>
+      const app2 = new Vue({
+      el: '#app2',
+        data:{
+          posts: ["post1", "post2"]
+        }
+      });
+    </script>
+
+    <!-- Import App -->
+    <script src="./main.js"></script>
+
+    <!-- Import Components -->
+    <script src="./components/ProductDisplay.js"></script>
+    <script src="./components/ReviewForm.js"></script>
+    <script src="./components/ReviewList.js"></script>
+
+    <!-- Mount App -->
+    <script>
+      const mountedApp = app.mount('#app')
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+
+.btn {
+    @apply inline-block bg-red-600 px-8 py-8 font-extrabold rounded-md text-red-100;
+
+}
+
+.btn:hover {
+    @apply bg-red-400
+}
+
+.btn:focus {
+    @apply outline-none shadow-outline
+}
+
+.btn:active {
+    @apply bg-red-700
+}
+
+@screen sm {
+    .btn {
+        @apply text-base;
+    }
+}
+@tailwind utilities;
